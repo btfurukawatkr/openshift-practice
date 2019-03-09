@@ -7,6 +7,7 @@ LABEL io.k8s.description="practice for using spring-boot, openshift, s2i" \
       io.openshift.tags="spring-boot"
 
 ENV STI_SCRIPTS_PATH=/usr/libexec/s2i
+ENV PATH $PATH:$STI_SCRIPTS_PATH
 
 COPY ./.s2i/bin /usr/libexec/s2i/
 
