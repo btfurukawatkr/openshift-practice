@@ -9,4 +9,4 @@ COPY ./.s2i/bin /usr/loacl/s2i
 
 EXPOSE 8080
 
-CMD ["usage"]
+CMD ["echo", "do oc command instead of docker command""]
