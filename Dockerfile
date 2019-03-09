@@ -1,6 +1,6 @@
 FROM registry.access.redhat.com/jboss-webserver-5/webserver50-tomcat9-openshift
 
-LABLE io.k8s.description="practice for using spring-boot, openshift, s2i" \
+LABEL io.k8s.description="practice for using spring-boot, openshift, s2i" \
       io.k8s.display-name="spring-boot practice" \
       io.openshift.expose-services="8080:http" \
       io.openshift.tags="spring-boot"
