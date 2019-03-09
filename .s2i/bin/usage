@@ -1,0 +1,5 @@
+#!/bin/bash -e
+
+cat <<EOF
+This is sample for using s2i script and maven and spring-boot
+EOF
