@@ -13,5 +13,5 @@ COPY ./.s2i/bin /usr/libexec/s2i/
 
 EXPOSE 8080
 
-CMD ["echo", "$PATH"]
+RUN echo $PATH
 CMD ["usage"]
