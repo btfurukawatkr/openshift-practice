@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# build
+echo 'start maven build'
+cd /tmp/s2i/
+mvn install -DskipTests
+
