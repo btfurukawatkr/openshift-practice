@@ -6,6 +6,8 @@ LABEL io.k8s.description="practice for using spring-boot, openshift, s2i" \
       io.openshift.expose-services="8080:http" \
       io.openshift.tags="spring-boot"
 
+ENV STI_SCRIPTS_PATH=/usr/libexec/s2i
+
 COPY ./.s2i/bin /usr/libexec/s2i/
 
 EXPOSE 8080
