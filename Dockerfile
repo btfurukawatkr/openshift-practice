@@ -11,7 +11,12 @@ ENV PATH $PATH:$STI_SCRIPTS_PATH
 
 COPY ./.s2i/bin/* /usr/libexec/s2i/
 
+CMD ["mkdir","-p","/work/app/"]
+
+COPY ./target/openshift-practice-*.jar /work/app/app.jar
+
 EXPOSE 8080
 
 RUN echo $PATH
-CMD ["usage"]
+CMD ["java","-jar","/work/app/app.jar"]
+#CMD ["usage"]
