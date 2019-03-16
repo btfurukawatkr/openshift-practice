@@ -6,6 +6,7 @@ pipeline {
   stages {
     stage("build application") {
       steps {
+        sh "echo building for version:${version}"
         sh "mvn -U clean package -DskipTests"
         stash includes: "./target/openshift-practice-${version}.jar", name: "jar"
       }
