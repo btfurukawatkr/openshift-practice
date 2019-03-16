@@ -8,21 +8,17 @@ pipeline {
       steps {
         sh "echo building for version:${version}"
         sh "mvn clean install -DskipTests"
-        sh "ls -l"
-        sh "ls -l target"
-        sh "ls -l ./target"
-        sh "ls -l ./target/openshift-practice-${version}.jar"
-        stash includes: "./target/openshift-practice-${version}.jar", name: "jar"
+#        stash includes: "./target/openshift-practice-${version}.jar", name: "jar"
       }
     }
     stage("run unit tests") {
       steps {
-        sh "echo 'no tests to run yet...'"
+        sh "echo no tests to run yet..."
       }
     }
     stage("build image") {
       steps {
-        unstash "jar"
+#        unstash "jar"
         script {
           openshift.withCluster() {
             openshift.withProject("spring") {
