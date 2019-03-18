@@ -28,6 +28,7 @@ pipeline {
               def buildSelector = nb.narrow("bc").related("builds")
               timeout(5) {
                 buildSelector.untilEach(1) {
+echo it.object().status.phase
                   return (it.object().status.phase == "Completed")
                 }
               }
