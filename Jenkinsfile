@@ -28,8 +28,7 @@ pipeline {
               def buildSelector = nb.narrow("bc").related("builds")
               timeout(5) {
                 buildSelector.untilEach(1) {
-                  echo "it.object().status.phase"
-                  return (it.object().status.phase == "Complete")
+                  return (it.object().status.phase == "Completed")
                 }
               }
             echo "Builds have been completed: ${buildSelector.names()}"
