@@ -23,7 +23,8 @@ pipeline {
           openshift.withCluster() {
             openshift.withProject("spring") {
               def nb = openshift.selector("bc", "practice")
-              nb.startBuild("--from-file=./target/openshift-practice-${version}.jar").logs("-f")
+//              nb.startBuild("--from-file=./target/openshift-practice-${version}.jar").logs("-f")
+              nb.startBuild("--from-dir=.").logs("-f")
               def buildSelector = nb.narrow("bc").related("builds")
               timeout(5) {
                 buildSelector.untilEach(1) {
